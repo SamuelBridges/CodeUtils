@@ -1,16 +1,8 @@
 using System;
 					
-public class Program
+public class PermutationCombination
 {
-	public static void Main()
-	{
-		Console.WriteLine(PermutationNoRep(10, 10).ToString());
-		Console.WriteLine(PermutationWithRep(10, 4).ToString());
-		Console.WriteLine(CombinationWithRep(4, 4).ToString());
-		Console.WriteLine(CombinationNoRep(4, 4).ToString());
-	}
-	
-	public static int factorial(int x) {
+	private static int factorial(int x) {
 		if(x == 0) {
 			return 1;
 		} else {
