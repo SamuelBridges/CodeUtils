@@ -20,6 +20,16 @@ def spiritBlendCalc(highStrengthAbv, highStrengthVol, lowStrengthAbv, lowStrengt
 def alcoholUnitCalculator(strengthPercentage, volumeMl):
     return (strengthPercentage * volumeMl) / 1000
 
+# Used to determine the alcohol content of fermented liquid
+def gravityToAbv(originalGravity, finalGravity, rounding = 0):
+    abv = (76.08 * (originalGravity-finalGravity) / (1.775-originalGravity)) * (finalGravity / 0.794)
+    if rounding != 0:
+        return round(abv, rounding)
+    else:
+        return abv
+        
+
 print(spiritDilutionCalc(60, 400, 40))
 print(spiritBlendCalc(60, 400, 0, 200))
 print(spiritBlendCalc(60, 400, 10, 200))
+print(gravityToAbv(1.135, 0.98, 2))
